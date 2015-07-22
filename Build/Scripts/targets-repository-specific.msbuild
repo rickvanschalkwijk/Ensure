@@ -1,0 +1,47 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+	<PropertyGroup>
+		<StaticFolder>$(SourceDirectory)HilverdaDeBoerWebsite\HilverdaDeBoer.Website\static\</StaticFolder>
+	</PropertyGroup>
+
+	<!-- start overwrite of targets -->
+	<Target Name="BeforeInstallNodePackages">
+		<ItemGroup>
+			<PackageJsonFiles Remove="@(PackageJsonFiles)" />
+			<PackageJsonFiles Include="$(StaticFolder)\packag*.json" />
+ 		</ItemGroup>
+	</Target>
+	<Target Name="BeforeRunGruntFiles">
+		<ItemGroup>
+			<GruntFiles Remove="@(GruntFiles)" />
+			<GruntFiles Include="$(StaticFolder)\gruntfil*.js" />
+		</ItemGroup>
+	</Target>
+	<Target Name="BeforeRunGulpFiles">
+		<ItemGroup>
+			<GulpFiles Remove="@(GulpFiles)" />
+			<GulpFiles Include="$(StaticFolder)\gulpfil*.js" />
+		</ItemGroup>
+	</Target>
+	<!-- end overwrite of targets -->
+
+	<!-- start new targets -->
+	<Target Name="BeforePrepareGlobalProperties" BeforeTargets="PrepareGlobalProperties">
+		<ItemGroup>
+			<PackageJsonFiles Remove="@(PackageJsonFiles)" />
+			<PackageJsonFiles Include="$(StaticFolder)\packag*.json" />
+ 		</ItemGroup>
+
+		<Exec Command="RMDIR /S /Q %(PackageJsonFiles.RootDir)%(PackageJsonFiles.Directory)node_modules" Condition="Exists('%(PackageJsonFiles.RootDir)%(PackageJsonFiles.Directory)node_modules')" />
+	</Target>
+	<Target Name="AfterCoreRunGulpFiles" AfterTargets="CoreRunGulpFiles">
+		<ItemGroup>
+			<PackageJsonFiles Remove="@(PackageJsonFiles)" />
+			<PackageJsonFiles Include="$(StaticFolder)\packag*.json" />
+ 		</ItemGroup>
+
+		<Exec Command="RMDIR /S /Q %(PackageJsonFiles.RootDir)%(PackageJsonFiles.Directory)node_modules" Condition="Exists('%(PackageJsonFiles.RootDir)%(PackageJsonFiles.Directory)node_modules')" />
+	</Target>
+	<!-- end new targets -->
+
+</Project>

@@ -1,7 +1,13 @@
-Ensure 
+Ensure
 ===========
 
 [![Build Status](https://travis-ci.org/rickvanschalkwijk/Ensure.svg?branch=develop)](https://travis-ci.org/rickvanschalkwijk/Ensure)
+
+Ensure.That is a simple guard clause argument validation lib, that helps you with validation of your arguments.
+
+```csharp
+Ensure.That(myString, "myString").IsNotNullOrWhiteSpace();
+```
 
 Contributing
 ------------
@@ -12,4 +18,3 @@ Contributing
 4. Push to the branch (`git push origin my_console_reader`)
 5. Open a [Pull Request][1]
 6. Enjoy a refreshing Diet Coke and wait
-

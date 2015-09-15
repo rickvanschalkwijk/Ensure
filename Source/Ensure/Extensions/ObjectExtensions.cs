@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Ensure.Constants;
+
 namespace Ensure.Extensions
 {
     public static class ObjectExtensions
@@ -8,7 +10,7 @@ namespace Ensure.Extensions
         {
             if (param.Value == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(ExceptionMessages.NotNull);
             }
         }
     }

@@ -1,4 +1,6 @@
 Ensure
+Develop: [![Build status](https://ci.appveyor.com/api/projects/status/3xojx4v5s5mxdcgk/branch/develop?svg=true)](https://ci.appveyor.com/project/rickvanschalkwijk/ensure/branch/develop)
+
 ===========
 
 [![Build Status](https://travis-ci.org/rickvanschalkwijk/Ensure.svg?branch=develop)](https://travis-ci.org/rickvanschalkwijk/Ensure)

@@ -6,7 +6,6 @@ namespace Ensure
     {
         public const string DefaultName = "";
         public Func<string> ExtraMessageFn;
-
         public readonly string Name;
 
         protected Param(string name, Func<string> extraMessageFn = null)

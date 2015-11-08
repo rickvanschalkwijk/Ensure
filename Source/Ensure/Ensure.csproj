@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Constants\ExceptionMessages.cs" />
     <Compile Include="Ensure.cs" />
+    <Compile Include="Extensions\DirectoryExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Factories\ExceptionFactory.cs" />

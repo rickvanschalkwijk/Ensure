@@ -19,7 +19,7 @@ namespace Ensure.Extensions
         {
             if (param.Value == string.Empty)
             {
-                throw new Exception(ExceptionMessages.NotNull);
+                throw new Exception(ExceptionMessages.IsNotNullOrWhiteSpace);
             }
         }
 
@@ -42,6 +42,16 @@ namespace Ensure.Extensions
                 throw ExceptionFactory.CreateForParamValidation(
                     param,
                     ExceptionMessages.IsNotInRange_ToLong);
+            }
+
+            return param;
+        }
+
+        public static Param<string> IsNotWhiteSpace(this Param<string> param)
+        {
+            if (string.IsNullOrWhiteSpace(param.Value))
+            {
+                throw ExceptionFactory.CreateForParamValidation(param, ExceptionMessages.IsNotNullOrWhiteSpace);
             }
 
             return param;

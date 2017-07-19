@@ -28,11 +28,23 @@ namespace Ensure.UnitTests
 
         [Test]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void MethodName_ShouldDo_ReturnValue()
+        public void That_ShouldThrowException_WhenValueIsNull()
         {
             string value = null;
 
             Ensure.That(value, "sting").IsNotNull();
         }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ThatOverload_ShouldThrowException_WhenValueIsNull()
+        {
+            string stringValue = null;
+
+            Ensure.That(stringValue).IsNotNull();
+        }
+
+
+
     }
 }

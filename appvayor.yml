@@ -23,7 +23,7 @@ assembly_info:
 
 environment:
   COVERALLS_REPO_TOKEN:
-    secure: VVAMBzZdOIb5Llwybst3aPPLWRtBhbAbv    
+    secure: VVAMBzZdOIb5Llwybst3aPPLWRtBhbAbv
 
 
 
@@ -34,7 +34,7 @@ hosts:
   api.nuget.org: 93.184.221.200
 
 before_build:
-  - cmd: nuget restore .\Source\WbTstr.sln
+  - cmd: nuget restore .\Source\Ensure.sln
 
 build:
   project: .\Source\Ensure.sln

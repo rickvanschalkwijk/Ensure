@@ -9,9 +9,9 @@ namespace Ensure.Extensions
     {
         public static void IsNotNull(this Param<string> param)
         {
-            if (param.Value == null)
+            if (param == null || param.Value == null)
             {
-                throw new ArgumentNullException(ExceptionMessages.NotNull);
+                throw new ArgumentNullException(nameof(ExceptionMessages.NotNull));
             }
         }
 

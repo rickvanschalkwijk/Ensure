@@ -9,7 +9,7 @@
 
         public static Param<T> That<T>(T value)
         {
-            return new Param<T>(value.ToString(), value);
+            return new Param<T>(value?.ToString() ?? string.Empty, value);
         }
     }
 }

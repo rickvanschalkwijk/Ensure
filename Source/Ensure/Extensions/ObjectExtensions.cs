@@ -10,7 +10,7 @@ namespace Ensure.Extensions
         {
             if (param.Value == null)
             {
-                throw new ArgumentNullException(ExceptionMessages.NotNull);
+                throw new ArgumentNullException();
             }
         }
     }

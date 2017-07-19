@@ -9,42 +9,44 @@ namespace Ensure.UnitTests
     [TestFixture]
     public class IsNotNullTests
     {
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [TestCase]
         public void That_ShouldThrowArgumentException()
         {
             object value = null;
 
-            Ensure.That(value, "object").IsNotNull();
+            TestDelegate action = () => Ensure.That(value, "Foo").IsNotNull();
+
+            Assert.Throws<ArgumentNullException>(action);
         }
 
-        [Test]
+        [TestCase]
         public void That_ShouldNotThrowArgumentException()
         {
             object value = new object();
 
-            Ensure.That(value, "object").IsNotNull();
+            TestDelegate action = () => Ensure.That(value, "object").IsNotNull();
+
+            Assert.DoesNotThrow(action);
         }
 
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [TestCase]
         public void That_ShouldThrowException_WhenValueIsNull()
         {
             string value = null;
 
-            Ensure.That(value, "sting").IsNotNull();
+            TestDelegate action = () => Ensure.That(value, "sting").IsNotNull();
+
+            Assert.Throws<ArgumentNullException>(action);
         }
 
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [TestCase]
         public void ThatOverload_ShouldThrowException_WhenValueIsNull()
         {
             string stringValue = null;
 
-            Ensure.That(stringValue).IsNotNull();
+            TestDelegate action = () => Ensure.That(stringValue).IsNotNull();
+
+            Assert.Throws<ArgumentNullException>(action);
         }
-
-
-
     }
 }

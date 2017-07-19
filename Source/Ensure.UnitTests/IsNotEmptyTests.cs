@@ -10,21 +10,21 @@ namespace Ensure.UnitTests
     public class IsNotEmptyTests
     {
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void That_ShouldThrowArgumentException()
         {
             var value = string.Empty;
 
-            Ensure.That(value, "object").IsNotEmpty();
+            TestDelegate action = () => Ensure.That(value, "object").IsNotEmpty();
+
+            Assert.Throws<ArgumentException>(action);
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void MethodName_ShouldDo_ReturnValue()
         {
             string value = "Foo";
 
-            Ensure.That(value, "sting").IsNotEmpty();
+            TestDelegate action = () => Ensure.That(value, "sting").IsNotEmpty();
         }
     }
 }

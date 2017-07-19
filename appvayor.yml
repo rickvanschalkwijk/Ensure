@@ -25,15 +25,19 @@ environment:
   COVERALLS_REPO_TOKEN:
     secure: VVAMBzZdOIb5Llwybst3aPPLWRtBhbAbv    
 
+
+
 #---------------------------------#
 #       Build configuration       #
 #---------------------------------#
+hosts:
+  api.nuget.org: 93.184.221.200
 
 before_build:
   - cmd: nuget restore .\Source\WbTstr.sln
 
 build:
-  project: .\Source\WbTstr.sln
+  project: .\Source\Ensure.sln
   publish_nuget: true
   verbosity: minimal
 

@@ -16,7 +16,7 @@ namespace Ensure.UnitTests
 
             TestDelegate action = () => Ensure.That(value, "object").IsNotEmpty();
 
-            Assert.Throws<ArgumentException>(action);
+            Assert.Throws<Exception>(action);
         }
 
         [Test]

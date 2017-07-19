@@ -19,7 +19,7 @@ namespace Ensure.Extensions
         {
             if (param.Value == string.Empty)
             {
-                throw new Exception(ExceptionMessages.IsNotNullOrWhiteSpace);
+                throw new Exception();
             }
         }
 

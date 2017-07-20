@@ -1,9 +1,8 @@
-Ensure [![Build status](https://ci.appveyor.com/api/projects/status/h9cunyf6ixwx5tui/branch/develop?svg=true)](https://ci.appveyor.com/project/rickvanschalkwijk/ensure/branch/develop) [![Coverage Status](https://coveralls.io/repos/github/rickvanschalkwijk/Ensure/badge.svg?branch=develop)](https://coveralls.io/github/rickvanschalkwijk/Ensure?branch=develop)
+Ensure 
+------------
+[![Build status](https://ci.appveyor.com/api/projects/status/h9cunyf6ixwx5tui/branch/develop?svg=true)](https://ci.appveyor.com/project/rickvanschalkwijk/ensure/branch/develop) [![Coverage Status](https://coveralls.io/repos/github/rickvanschalkwijk/Ensure/badge.svg?branch=develop)](https://coveralls.io/github/rickvanschalkwijk/Ensure?branch=develop)
 
-
-----------
-
-===========
+------------
 
 Ensure.That is a simple guard clause argument validation lib, that helps you with validation of your arguments.
 

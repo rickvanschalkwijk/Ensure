@@ -60,5 +60,44 @@ namespace Ensure.UnitTests
             // assert
             Assert.Throws<ArgumentException>(action, "Excepted length of the string is too short", "Bar");
         }
+
+        [Test]
+        public void HasLenghtBetween_ShouldThrowException_WhenLenghtIsMoreThanMaxLenght()
+        {
+            // arrange
+            string value = "Bar";
+
+            // act
+            TestDelegate action = () => Ensure.That(value).HasLengthBetween(1, 2);
+
+            // assert
+            Assert.Throws<ArgumentException>(action, "Excepted length of the string is too long", "Bar");
+        }
+
+        [Test]
+        public void HasLenghtBetween_ShouldReturnTheArgument_WhenLenghtIsBetweenMinAndMax()
+        {
+            // arrange
+            string value = "Bar";
+
+            // act
+            var actual = Ensure.That(value).HasLengthBetween(1, 10);
+
+            // assert
+            Assert.That(actual.Value, Is.EqualTo("Bar"));
+        }
+
+        [Test]
+        public void IsNotWhiteSpace_ShouldReturnException_WhenParamIsNotWhiteSpace()
+        {
+            // arrange
+            string value = "Bar";
+
+            // act
+            var actual = Ensure.That(value).IsNotWhiteSpace();
+
+            // assert
+            Assert.That(actual.Value, Is.EqualTo("Bar"));
+        }
     }
 }

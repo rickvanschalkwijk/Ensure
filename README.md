@@ -4,7 +4,7 @@ Ensure
 
 ------------
 
-Ensure.That is a simple guard clause argument validation lib, that helps you with validation of your arguments.
+Ensure.That is a small guard clause argument validation package.
 
 ```csharp
 Ensure.That(myString, "myString").IsNotNullOrWhiteSpace();

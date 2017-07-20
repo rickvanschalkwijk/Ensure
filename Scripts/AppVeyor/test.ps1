@@ -11,6 +11,10 @@ $nunitrunner = (Resolve-Path ".\Source\packages\NUnit.ConsoleRunner.*\tools\nuni
              -filter:"-[Ensure.UnitTests*]*" `
              -output:opencover.xml 
 
+Write-Host "repo token = " $env:COVERALLS_REPO_TOKEN
+
+Write-Host "configuration = " $env:COVERALLS_REPO_TOKEN
+
 # Push results to Coveralls
 & $coveralls --useRelativePaths `
              --serviceName AppVeyor `

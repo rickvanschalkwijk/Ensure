@@ -10,8 +10,10 @@ namespace Ensure.Extensions
         {
             if (param.Value == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(param.Value));
             }
         }
+
+       // public static void AreNotTheSame(this Param<object> param, )
     }
 }

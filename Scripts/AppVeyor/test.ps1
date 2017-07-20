@@ -21,4 +21,4 @@ $nunitrunner = (Resolve-Path ".\Source\packages\NUnit.ConsoleRunner.*\tools\nuni
              --commitAuthor $env:APPVEYOR_REPO_COMMIT_AUTHOR `
              --commitEmail $env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL `
              --commitMessage $env:APPVEYOR_REPO_COMMIT_MESSAGE `
---jobId $env:APPVEYOR_BUILD_NUMBER
+             --jobId $env:APPVEYOR_BUILD_NUMBER

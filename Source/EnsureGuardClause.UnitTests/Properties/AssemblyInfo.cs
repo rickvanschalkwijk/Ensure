@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ensure")]
+[assembly: AssemblyTitle("EnsureGuardClause.UnitTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mirabeau")]
-[assembly: AssemblyProduct("Ensure")]
+[assembly: AssemblyProduct("Ensure.UnitTests")]
 [assembly: AssemblyCopyright("Copyright © Mirabeau 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b8f755e3-0984-496c-87e4-3e77065f820a")]
+[assembly: Guid("a48778aa-b0eb-4f5f-b445-b628ecef3679")]
 
 // Version information for an assembly consists of the following four values:
 //

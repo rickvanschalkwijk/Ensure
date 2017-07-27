@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ensure", "Ensure\Ensure.csproj", "{B5776AA0-A83F-46A9-A25B-F0E53110AEA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureGuardClause", "EnsureGuardClause\EnsureGuardClause.csproj", "{B5776AA0-A83F-46A9-A25B-F0E53110AEA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ensure.UnitTests", "Ensure.UnitTests\Ensure.UnitTests.csproj", "{11898C12-5364-447C-BA4D-6B879F349AB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsureGuardClause.UnitTests", "EnsureGuardClause.UnitTests\EnsureGuardClause.UnitTests.csproj", "{11898C12-5364-447C-BA4D-6B879F349AB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

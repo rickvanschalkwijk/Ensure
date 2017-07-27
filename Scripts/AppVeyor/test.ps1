@@ -6,9 +6,9 @@ $nunitrunner = (Resolve-Path ".\Source\packages\NUnit.ConsoleRunner.*\tools\nuni
 # Run tests through OpenCover
 & $opencover -register:user `
              -target:"$nunitrunner" `
-             -targetargs:".\Source\Ensure.UnitTests\bin\$env:CONFIGURATION\Ensure.UnitTests.dll" `
-             -filter:"+[Ensure*]*" `
-             -filter:"-[Ensure.UnitTests*]*" `
+             -targetargs:".\Source\EnsureGuardClause.UnitTests\bin\$env:CONFIGURATION\Ensure.UnitTests.dll" `
+             -filter:"+[EnsureGuardClause*]*" `
+             -filter:"-[EnsureGuardClause.UnitTests*]*" `
              -output:opencover.xml 
 
 Write-Host "repo token = " $env:COVERALLS_REPO_TOKEN

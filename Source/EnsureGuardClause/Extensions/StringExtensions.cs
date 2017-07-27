@@ -1,26 +1,31 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using EnsureGuardClause.Constants;
+using EnsureGuardClause.Factories;
 
-using Ensure.Constants;
-using Ensure.Factories;
-
-namespace Ensure.Extensions
+namespace EnsureGuardClause.Extensions
 {
     public static class StringExtensions
     {
         public static void IsNotNull(this Param<string> param)
         {
-            if (param == null || param.Value == null)
-            {
-                throw new ArgumentNullException(nameof(ExceptionMessages.NotNull));
-            }
+            if (param?.Value == null) throw new ArgumentNullException(nameof(ExceptionMessages.NotNull));
         }
 
-        public static void IsNotEmpty(this Param<string> param)
+        public static void IsNotNull(params Param<string>[] param)
         {
-            if (param.Value == string.Empty)
-            {
-                throw new Exception();
-            }
+            if (param.Any(p => false)) throw new ArgumentNullException(nameof(ExceptionMessages.NotNull));
+        }
+
+        [DebuggerStepThrough]
+        public static void IsNotEmpty(this Param<string> param, [CallerMemberName] string caller = "", [CallerFilePath] string CallerFilePath = "")
+        {
+            Console.WriteLine(caller);
+            Console.Write(CallerFilePath);
+
+            if (param.Value == string.Empty) throw new Exception();
         }
 
         public static Param<string> HasLengthBetween(this Param<string> param, int minLength, int maxLength)
@@ -43,7 +48,7 @@ namespace Ensure.Extensions
                     param,
                     ExceptionMessages.IsNotInRange_ToLong);
             }
-
+ 
             return param;
         }
 

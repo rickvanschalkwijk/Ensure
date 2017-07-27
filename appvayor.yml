@@ -34,10 +34,10 @@ hosts:
   api.nuget.org: 93.184.221.200
 
 before_build:
-  - cmd: nuget restore .\Source\Ensure.sln
+  - cmd: nuget restore .\Source\EnsureGuardClause.sln
 
 build:
-  project: .\Source\Ensure.sln
+  project: .\Source\EnsureGuardClause.sln
   publish_nuget: true
   verbosity: minimal
 

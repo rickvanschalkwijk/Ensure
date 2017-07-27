@@ -1,4 +1,4 @@
-﻿namespace Ensure.Constants
+﻿namespace EnsureGuardClause.Constants
 {
     internal class ExceptionMessages
     {

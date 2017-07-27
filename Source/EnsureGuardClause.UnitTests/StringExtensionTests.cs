@@ -1,15 +1,13 @@
 ﻿using System;
-
-using Ensure.Extensions;
-
+using EnsureGuardClause.Extensions;
 using NUnit.Framework;
 
-namespace Ensure.UnitTests
+namespace EnsureGuardClause.UnitTests
 {
     [TestFixture]
     public class StringExtensionTests
     {
-        [Test]
+        [TestCase]
         public void That_ShouldThrowArgumentException()
         {
             // arrange
@@ -22,7 +20,20 @@ namespace Ensure.UnitTests
             Assert.Throws<Exception>(action);
         }
 
-        [Test]
+        [TestCase]
+        public void That_ShouldThrowArgumentException_()
+        {
+            // arrange
+            var value = string.Empty;
+
+            // act
+            TestDelegate action = () => Ensure.That(null,"","", "object").IsNotNull();
+
+            // assert
+            Assert.Throws<ArgumentNullException>(action);
+        }
+
+        [TestCase]
         public void IsNotEmpty_ShouldNotThrowException_ReturnVoid()
         {
             // arrange
@@ -35,20 +46,20 @@ namespace Ensure.UnitTests
             Assert.DoesNotThrow(action);
         }
 
-        [Test]
+        [TestCase]
         public void HasLengthBetween_ShouldThrowExcepton_WhenStringIsNull()
         {
             // arrange
             string value = null;
 
             // act
-            TestDelegate action = () => Ensure.That(value).HasLengthBetween(0,0);
+            TestDelegate action = () => Ensure.That(value).HasLengthBetween(0, 0);
 
             // assert
             Assert.Throws<Exception>(action);
         }
 
-        [Test]
+        [TestCase]
         public void HasLengthBetween_ShouldThrowException_WhenLenghtIsLessThanMinLenght()
         {
             // arrange
@@ -61,7 +72,7 @@ namespace Ensure.UnitTests
             Assert.Throws<ArgumentException>(action, "Excepted length of the string is too short", "Bar");
         }
 
-        [Test]
+        [TestCase]
         public void HasLenghtBetween_ShouldThrowException_WhenLenghtIsMoreThanMaxLenght()
         {
             // arrange
@@ -74,7 +85,7 @@ namespace Ensure.UnitTests
             Assert.Throws<ArgumentException>(action, "Excepted length of the string is too long", "Bar");
         }
 
-        [Test]
+        [TestCase]
         public void HasLenghtBetween_ShouldReturnTheArgument_WhenLenghtIsBetweenMinAndMax()
         {
             // arrange
@@ -87,7 +98,7 @@ namespace Ensure.UnitTests
             Assert.That(actual.Value, Is.EqualTo("Bar"));
         }
 
-        [Test]
+        [TestCase]
         public void IsNotWhiteSpace_ShouldReturnException_WhenParamIsNotWhiteSpace()
         {
             // arrange
@@ -98,6 +109,26 @@ namespace Ensure.UnitTests
 
             // assert
             Assert.That(actual.Value, Is.EqualTo("Bar"));
+        }
+
+        [TestCase]
+        public void That_ShouldThrowException_WhenValueIsNull()
+        {
+            string value = null;
+
+            TestDelegate action = () => Ensure.That(value, "sting").IsNotNull();
+
+            Assert.Throws<ArgumentNullException>(action);
+        }
+
+        [TestCase]
+        public void ThatOverload_ShouldThrowException_WhenValueIsNull()
+        {
+            string stringValue = null;
+
+            TestDelegate action = () => Ensure.That(stringValue).IsNotNull();
+
+            Assert.Throws<ArgumentNullException>(action);
         }
     }
 }

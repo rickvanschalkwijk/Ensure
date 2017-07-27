@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Ensure.Factories
+namespace EnsureGuardClause.Factories
 {
     internal static class ExceptionFactory
     {

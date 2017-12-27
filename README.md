@@ -1,6 +1,7 @@
 Ensure 
 ------------
-[![Build status](https://ci.appveyor.com/api/projects/status/h9cunyf6ixwx5tui/branch/develop?svg=true)](https://ci.appveyor.com/project/rickvanschalkwijk/ensure/branch/develop) [![Coverage Status](https://coveralls.io/repos/github/rickvanschalkwijk/Ensure/badge.svg?branch=develop)](https://coveralls.io/github/rickvanschalkwijk/Ensure?branch=develop)
+
+[![Build status](https://thedopesoapco.visualstudio.com/_apis/public/build/definitions/c6191b84-4a2a-4319-bc25-94b502cfdeff/1/badge)] (https://thedopesoapco.visualstudio.com/Ensure/Ensure/_build/index?definitionId=1)
 
 ------------
 

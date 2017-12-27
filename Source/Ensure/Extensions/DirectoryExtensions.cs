@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace EnsureGuardClause.Extensions
+namespace Ensure.Extensions
 {
     public static class DirectoryExtensions
     {

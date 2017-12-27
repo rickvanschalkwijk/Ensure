@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using EnsureGuardClause.Constants;
-using EnsureGuardClause.Factories;
+using Ensure.Constants;
+using Ensure.Factories;
 
-namespace EnsureGuardClause.Extensions
+namespace Ensure.Extensions
 {
     public static class StringExtensions
     {
@@ -19,12 +18,8 @@ namespace EnsureGuardClause.Extensions
             if (param.Any(p => false)) throw new ArgumentNullException(nameof(ExceptionMessages.NotNull));
         }
 
-        [DebuggerStepThrough]
-        public static void IsNotEmpty(this Param<string> param, [CallerMemberName] string caller = "", [CallerFilePath] string CallerFilePath = "")
+        public static void IsNotEmpty(this Param<string> param, string caller = "", [CallerFilePath] string CallerFilePath = "")
         {
-            Console.WriteLine(caller);
-            Console.Write(CallerFilePath);
-
             if (param.Value == string.Empty) throw new Exception();
         }
 
@@ -39,14 +34,16 @@ namespace EnsureGuardClause.Extensions
 
             if (length < minLength)
             {
-                throw new Exception(ExceptionMessages.IsNotInRange_ToShort);
+                throw ExceptionFactory.CreateForParamValidation(
+                    param,
+                    ExceptionMessages.IsNotInRangeToShort);
             }
 
             if (length > maxLength)
             {
                 throw ExceptionFactory.CreateForParamValidation(
                     param,
-                    ExceptionMessages.IsNotInRange_ToLong);
+                    ExceptionMessages.IsNotInRangeToLong);
             }
  
             return param;

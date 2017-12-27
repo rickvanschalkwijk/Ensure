@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EnsureGuardClause
+namespace Ensure
 {
     public abstract class Param
     {
@@ -30,6 +30,5 @@ namespace EnsureGuardClause
         {
             ListValue = value;
         }
-
     }
 }

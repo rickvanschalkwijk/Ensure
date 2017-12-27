@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 
-namespace EnsureGuardClause.Factories
+namespace Ensure.Factories
 {
     internal static class ExceptionFactory
     {
         internal static Exception CreateForParamValidation(Param param, string message)
         {
-            return new ArgumentException(param.Name.ToString(), message);
+            return new ArgumentException(param.Name, message);
         }
 
         internal static Exception CreateForParamNull(Param param, string message)

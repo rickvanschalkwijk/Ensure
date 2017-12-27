@@ -1,4 +1,4 @@
-﻿namespace EnsureGuardClause
+﻿namespace Ensure
 {
     public static class Ensure
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace EnsureGuardClause.Extensions
+namespace Ensure.Extensions
 {
     public static class ObjectExtensions
     {
